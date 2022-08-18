@@ -1,5 +1,9 @@
 * {
-  margin: 0px;
-  padding: 0px;
-  background-color: gray;
+  justify-content: space-between;
+  text-align: center;
+  background: lightgray;
+}
+
+h1 {
+  margin-bottom: 20px;
 }
