@@ -14,6 +14,17 @@ const Customer = () => {
         fetch()
     }, [])
 
+    // const categoryList = [
+    //     { value: "paint", label: "Paint" },
+    //     { value: "plumbing", label: "Plumbing" },
+    //     { value: "electrical", label: "Electrical" },
+    // ];
+
+    // const list = [
+    //     { value: "high", label: "High" },
+    //     { value: "normal", label: "Normal" },
+    // ];
+
     const onhandleSelect = async (selectedOptions) => {
         setSelectedOptions(selectedOptions);
         let result = await axios.get(`http://localhost:5150/category`)
@@ -25,6 +36,7 @@ const Customer = () => {
         let result = await axios.get(`http://localhost:5150/Urgency`)
         urgentOptions(result.data)
     };
+
 
     return (
         <div className="customer">

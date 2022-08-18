@@ -1,52 +1,52 @@
 .customer {
     border: 20%;
-}
-
-.customer-name {
+  }
+  
+  .customer-name {
     margin: 0px;
     padding: 0px;
     justify-content: center;
     margin-top: 20px;
-}
-
-.input-name {
+  }
+  
+  .input-name {
     text-align: center;
     padding: 0px;
     margin: 0px;
     background-color: white;
-}
-
-option {
+  }
+  
+  option {
     background-color: white;
     color: black;
-}
-
-.category {
-    margin-top: 20px;
-}
-
-select {
+  }
+  
+  .category {
+    margin-top: 20px;  
+  }
+  
+  select {
     background-color: white;
     color: black;
     text-align: center;
-}
-
-.urgency {
+  }
+  
+  .urgency{
     margin-top: 20px;
-}
-
-.urgency-select {
+  }
+  
+  .urgency-select {
     color: black;
     text-align: center;
-}
-
-.submit-button {
+  }
+  
+  .submit-button {
     color: black;
     margin-left: 400px;
     margin-bottom: 500px;
-}
-
-.btn {
+  }
+  
+  .btn {
     background-color: black;
     color: white;
-}
+  }
