@@ -14,18 +14,6 @@ const Technician = () => {
         fetch()
     }, [])
 
-    // const people = [
-    //     { value: "Alice", label: "Alice" },
-    //     { value: "Bob", label: "Bob" },
-    //     { value: "Charlie", label: "Charlie" },
-    // ];
-
-    // const problems = [
-    //     { value: "Paint", label: "Paint" },
-    //     { value: "Plumbing", label: "Plumbing" },
-    //     { value: "Electrical", label: "Electrical" },
-    // ];
-
     const onHandleSelect = async (selectedOptions) => {
         setSelectedOptions(selectedOptions);
         let result = await axios.get(`http://localhost:5150/technician`)
