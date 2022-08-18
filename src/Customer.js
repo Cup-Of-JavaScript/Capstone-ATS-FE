@@ -1,6 +1,6 @@
+import {React, useEffect, useState} from "react";
 import axios from "axios";
 import "./Customer.css";
-import { useState, useEffect } from "react";
 
 const Customer = () => {
     const [selectedOptions, setSelectedOptions] = useState('');
