@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Customer.css";
 
 const Customer = () => {
-    let inputNameRef = useRef(null);
+    let inputNameRef = useRef("");
 
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [urgentOptions, setUrgentOptions] = useState([]);
@@ -42,7 +42,7 @@ const Customer = () => {
 
     const addCustomerHandler = async (listId) => {
         let data = {
-            "task_name": inputNameRef.current.value
+            "customer_name": inputNameRef.current.value
         }
         let r = await axios.post(`http://localhost:5150/Customer`, data)
         console.log(r)
