@@ -26,17 +26,6 @@ const Customer = () => {
         fetch()
     }, [])
 
-    //   const categoryList = [
-    //     { value: "paint", label: "Paint" },
-    //     { value: "plumbing", label: "Plumbing" },
-    //     { value: "electrical", label: "Electrical" },
-    //   ];
-
-    //   const list = [
-    //     { value: "high", label: "High" },
-    //     { value: "normal", label: "Normal" },
-    //   ];
-
     const onhandleSelect = async (category) => {
         setSelectedOptions(category);
         console.log(categoryListId)
@@ -58,8 +47,6 @@ const Customer = () => {
         let r = await axios.post(`http://localhost:5150/Customer`, data)
         console.log(r)
     }
-
-
 
     return (
         <div className="customer">
