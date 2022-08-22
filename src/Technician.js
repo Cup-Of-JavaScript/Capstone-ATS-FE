@@ -1,12 +1,13 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useRef} from "react";
 import axios from 'axios'
 import './Technician.css'
 
 const Technician = () => {
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [otherSelectedOptions, setOtherSelectedOptions] = useState([])
-    const [techListId, setTechListId] = useState(0)
-    const [issueListId, setIssueListId] = useState(0)
+
+    let inputIdRef = useRef(null)
+    let inputNameRef = useRef(null)
 
     useEffect(() => {
         const fetch = async () => {
@@ -24,26 +25,23 @@ const Technician = () => {
         fetch()
     }, [])
 
-    const onHandleSelect = async (technician) => {
-        setSelectedOptions(technician);
-        console.log(techListId)
-        let result = await axios.get(`http://localhost:5150/Technician`)
-        setTechListId(result.data)
+    const onhandleSelect = async (event) => {
+        event.preventDefault();
+        let tech = {
+            tech_name: inputNameRef.current.value,
+            category_id: parseInt(inputIdRef.current.value)
+          };
+          let result = await axios.put(`http://localhost:5150/Technician`, tech)
+        console.log(result.data)
     };
 
-    const onOtherHandleSelect = async (category) => {
-        setOtherSelectedOptions(category);
-        console.log(issueListId)
-        let result = await axios.get(`http://localhost:5150/category`)
-        setIssueListId(result.data)
-    };
 
     return (
         <div className="Technician">
+            <form onSubmitCapture={onhandleSelect}>
             <div>Technician Name:</div>
-            <select
-                onChange={(e) => onHandleSelect(e.target.value)}>
-                <option value="">Select Name</option>
+            <select>
+                <option ref={inputIdRef} value="">Select Name</option>
                 {selectedOptions.map((s) => (
                     <option key={s.tech_id} value={s.tech_id}>
                         {s.tech_name}
@@ -52,9 +50,8 @@ const Technician = () => {
             </select>
             <div>
                 <div>Issue</div>
-                <select
-                    onChange={(e) => onOtherHandleSelect(e.target.value)}>
-                    <option value="">Select Issue</option>
+                <select>
+                    <option ref={inputNameRef} value="">Select Issue</option>
                     {otherSelectedOptions.map((s) => (
                         <option key={s.category_id} value={s.category_id}>
                             {s.category_name}
@@ -63,8 +60,9 @@ const Technician = () => {
                 </select>
             </div >
             <div className="accept-container">
-                <button className="accept-btn">Accept</button>
+                <button className="accept-btn" type="submit">Accept</button>
             </div>
+            </form>
         </div>
     )
 }

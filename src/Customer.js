@@ -4,11 +4,10 @@ import "./Customer.css";
 
 const Customer = () => {
     let inputNameRef = useRef(null);
-
+    
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [urgentOptions, setUrgentOptions] = useState([]);
-    const [categoryListId, setCategoryListId] = useState(0)
-    const [urgencyListId, setUrgencyListId] = useState(0)
+    const [categoryListId, setCategoryListId] = useState(true)
 
     useEffect(() => {
         const fetch = async () => {
@@ -33,13 +32,6 @@ const Customer = () => {
         setCategoryListId(result.data)
     };
 
-    const onhandleClick = async (urgency) => {
-        setUrgentOptions(urgency);
-        console.log(urgencyListId)
-        let result = await axios.get(`http://localhost:5150/Urgency`)
-        setUrgencyListId(result.data)
-    };
-
     const addCustomerHandler = async (listId) => {
         let data = {
             "task_name": inputNameRef.current.value
@@ -54,16 +46,14 @@ const Customer = () => {
                 Customer Name:
             </div>
             <input
+                onChange={onhandleSelect}
                 className="input-name"
-                onClick={() => { }}
                 placeholder="Full Name"
             ></input>
             <div className="category">
                 Category:
             </div>
-            <select
-                onChange={(e) => onhandleSelect(e.target.value)}
-            >
+            <select>
                 <option value="">
                     Select Category
                 </option>
@@ -77,8 +67,7 @@ const Customer = () => {
                 <div className="urgency">
                     Urgency:
                 </div>
-                <select
-                    onChange={(e) => onhandleClick(e.target.value)}>
+                <select>
                     <option value="">
                         Select Category
                     </option>
@@ -92,7 +81,7 @@ const Customer = () => {
             <div className="submit-button">
                 <button className="btn" onClick={() => addCustomerHandler()}>Submit</button>
             </div>
-        </div >
+            </div>
     );
 };
 
