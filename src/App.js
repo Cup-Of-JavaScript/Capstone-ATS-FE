@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Customer from './Customer'
 import Technician from './Technician';
 import TopPanel from './TopPanel'
-import { BillingReport } from './BillingReport';
+import  BillingReport  from './BillingReport';
 import './App.css';
 
 function App() {
