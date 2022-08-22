@@ -6,11 +6,7 @@ import axios from 'axios'
 export const BillingReport = () => {
   let [billing, setBilling] = useState([])
 
-  // const renderReport = async () => {
-  //   let result = await axios.get(`http://localhost:5150/BillingReport`)
-  //   setBilling(result.data)
-
-  // }
+  
 
 
   useEffect(() => {

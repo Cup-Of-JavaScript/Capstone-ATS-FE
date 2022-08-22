@@ -3,10 +3,10 @@ import axios from "axios";
 import "./Customer.css";
 
 const Customer = () => {
-    let inputNameRef = useRef();
-    let inputCateIdRef = useRef();
-    let inputUrgIdRef = useRef();
-    
+    let inputNameRef = useRef(null);
+    let inputCateIdRef = useRef(null);
+    let inputUrgIdRef = useRef(null);
+
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [urgentOptions, setUrgentOptions] = useState([]);
     const [categoryListId, setCategoryListId] = useState('')
@@ -28,12 +28,12 @@ const Customer = () => {
         fetch()
     }, [])
 
-    const onhandleSelect = async (inputData) => {
-        setCategoryListId(inputData)
+    const onhandleSelect = async (inputText) => {
+        setCategoryListId(inputText)
     };
 
-    const onhandleChoose = async (inputData) => {
-        setUrgencyListId(inputData)
+    const onhandleSelectTwo = async (inputText) => {
+        setUrgencyListId(inputText)
     };
 
     const addCustomerHandler = async () => {
@@ -52,7 +52,7 @@ const Customer = () => {
                 Customer Name:
             </div>
             <input
-            ref={inputNameRef}
+                ref={inputNameRef}
                 className="input-name"
                 placeholder="Full Name"
             ></input>
@@ -63,17 +63,17 @@ const Customer = () => {
                 <option >
                     Select Category
                 </option>
-                {selectedOptions.map((c) => (
-                    <option key={c.category_id} value={c.category_id}>
-                        {c.category_name}
+                {selectedOptions.map((s) => (
+                    <option key={s.category_id} value={s.category_id}>
+                        {s.category_name}
                     </option>
-                ))}   
+                ))}
             </select>
             <div className="urgency-select">
                 <div className="urgency">
                     Urgency:
                 </div>
-                <select ref={inputCateIdRef} onChange={(e) => onhandleChoose(e.target.value)} value={urgencyListId}>
+                <select onChange={(e) => onhandleSelectTwo(e.target.value)} ref={inputUrgIdRef} value={urgencyListId}>
                     <option >
                         Select Category
                     </option>
@@ -87,7 +87,7 @@ const Customer = () => {
             <div className="submit-button">
                 <button className="btn" onClick={() => addCustomerHandler()}>Submit</button>
             </div>
-            </div>
+        </div>
     );
 };
 
