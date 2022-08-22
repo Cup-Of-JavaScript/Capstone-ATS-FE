@@ -4,10 +4,12 @@ import "./Customer.css";
 
 const Customer = () => {
     let inputNameRef = useRef(null);
+    let inputCateIdRef = useRef(null);
+    let inputUrgIdRef = useRef(null);
     
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [urgentOptions, setUrgentOptions] = useState([]);
-    const [categoryListId, setCategoryListId] = useState(true)
+    const [categoryListId, setCategoryListId] = useState('')
 
     useEffect(() => {
         const fetch = async () => {
@@ -25,18 +27,17 @@ const Customer = () => {
         fetch()
     }, [])
 
-    const onhandleSelect = async (category) => {
-        setSelectedOptions(category);
-        console.log(categoryListId)
-        let result = await axios.get(`http://localhost:5150/category`)
-        setCategoryListId(result.data)
+    const onhandleSelect = async (inputData) => {
+        setCategoryListId(inputData)
     };
 
-    const addCustomerHandler = async (listId) => {
-        let data = {
-            "task_name": inputNameRef.current.value
+    const addCustomerHandler = async () => {
+        let customers = {
+            "customer_name": inputNameRef.current.value,
+            "category_id": parseInt(inputCateIdRef.current.value),
+            "urgency_id": parseInt(inputUrgIdRef.current.value)
         }
-        let r = await axios.post(`http://localhost:5150/Customer`, data)
+        let r = await axios.post(`http://localhost:5150/Customer`, customers)
         console.log(r)
     }
 
@@ -46,7 +47,7 @@ const Customer = () => {
                 Customer Name:
             </div>
             <input
-                onChange={onhandleSelect}
+            ref={inputNameRef}
                 className="input-name"
                 placeholder="Full Name"
             ></input>
@@ -54,7 +55,7 @@ const Customer = () => {
                 Category:
             </div>
             <select>
-                <option value="">
+                <option ref={inputCateIdRef} onChange={(e) => onhandleSelect(e.target.value)} value="">
                     Select Category
                 </option>
                 {selectedOptions.map((s) => (
@@ -68,7 +69,7 @@ const Customer = () => {
                     Urgency:
                 </div>
                 <select>
-                    <option value="">
+                    <option ref={inputUrgIdRef} value={"urgency_Id"}>
                         Select Category
                     </option>
                     {urgentOptions.map((s) => (
