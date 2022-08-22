@@ -5,7 +5,7 @@ import "./Customer.css";
 const Customer = () => {
     let inputNameRef = useRef("");
 
-    const [selectedOptions, setSelectedOptions] = useState([]);
+    const [categoryOptions, setCategoryOptions] = useState([]);
     const [urgentOptions, setUrgentOptions] = useState([]);
     const [categoryListId, setCategoryListId] = useState(0)
     const [urgencyListId, setUrgencyListId] = useState(0)
@@ -13,7 +13,7 @@ const Customer = () => {
     useEffect(() => {
         const fetch = async () => {
             let r = await axios.get(`http://localhost:5150/category`)
-            setSelectedOptions(r.data)
+            setCategoryOptions(r.data)
         }
         fetch()
     }, [])
@@ -27,7 +27,7 @@ const Customer = () => {
     }, [])
 
     const onhandleSelect = async (category) => {
-        setSelectedOptions(category);
+        setCategoryOptions(category);
         console.log(categoryListId)
         let result = await axios.get(`http://localhost:5150/category`)
         setCategoryListId(result.data)
@@ -62,12 +62,11 @@ const Customer = () => {
                 Category:
             </div>
             <select
-                onChange={(e) => onhandleSelect(e.target.value)}
-            >
+                onChange={(e) => onhandleSelect(e.target.value)}>
                 <option value="">
                     Select Category
                 </option>
-                {selectedOptions.map((s) => (
+                {categoryOptions.map((s) => (
                     <option key={s.category_id} value={s.category_id}>
                         {s.category_name}
                     </option>
