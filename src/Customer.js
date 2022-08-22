@@ -3,17 +3,18 @@ import axios from "axios";
 import "./Customer.css";
 
 const Customer = () => {
-    let inputNameRef = useRef(null);
-    let inputCateIdRef = useRef(null);
-    let inputUrgIdRef = useRef(null);
+    let inputNameRef = useRef();
+    let inputCateIdRef = useRef();
+    let inputUrgIdRef = useRef();
     
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [urgentOptions, setUrgentOptions] = useState([]);
     const [categoryListId, setCategoryListId] = useState('')
+    const [urgencyListId, setUrgencyListId] = useState('')
 
     useEffect(() => {
         const fetch = async () => {
-            let r = await axios.get(`http://localhost:5150/category`)
+            let r = await axios.get(`http://localhost:5150/Category`)
             setSelectedOptions(r.data)
         }
         fetch()
@@ -29,6 +30,10 @@ const Customer = () => {
 
     const onhandleSelect = async (inputData) => {
         setCategoryListId(inputData)
+    };
+
+    const onhandleChoose = async (inputData) => {
+        setUrgencyListId(inputData)
     };
 
     const addCustomerHandler = async () => {
@@ -54,22 +59,22 @@ const Customer = () => {
             <div className="category">
                 Category:
             </div>
-            <select>
-                <option ref={inputCateIdRef} onChange={(e) => onhandleSelect(e.target.value)} value="">
+            <select ref={inputCateIdRef} onChange={(e) => onhandleSelect(e.target.value)} value={categoryListId}>
+                <option >
                     Select Category
                 </option>
-                {selectedOptions.map((s) => (
-                    <option key={s.category_id} value={s.category_id}>
-                        {s.category_name}
+                {selectedOptions.map((c) => (
+                    <option key={c.category_id} value={c.category_id}>
+                        {c.category_name}
                     </option>
-                ))}
+                ))}   
             </select>
             <div className="urgency-select">
                 <div className="urgency">
                     Urgency:
                 </div>
-                <select>
-                    <option ref={inputUrgIdRef} value={"urgency_Id"}>
+                <select ref={inputCateIdRef} onChange={(e) => onhandleChoose(e.target.value)} value={urgencyListId}>
+                    <option >
                         Select Category
                     </option>
                     {urgentOptions.map((s) => (
