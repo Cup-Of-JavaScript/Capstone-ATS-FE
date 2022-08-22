@@ -7,3 +7,7 @@
 h1 {
   margin-bottom: 20px;
 }
+
+.router {
+  cursor: pointer;
+}
