@@ -6,10 +6,11 @@ const Customer = () => {
     let inputNameRef = useRef(null);
     let inputCateIdRef = useRef(null);
     let inputUrgIdRef = useRef(null);
-    
+
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [urgentOptions, setUrgentOptions] = useState([]);
     const [categoryListId, setCategoryListId] = useState('')
+    const [urgencyListId, setUrgencyListId] = useState('')
 
     useEffect(() => {
         const fetch = async () => {
@@ -27,8 +28,12 @@ const Customer = () => {
         fetch()
     }, [])
 
-    const onhandleSelect = async (inputData) => {
-        setCategoryListId(inputData)
+    const onhandleSelect = async (inputText) => {
+        setCategoryListId(inputText)
+    };
+
+    const onhandleSelectTwo = async (inputText) => {
+        setUrgencyListId(inputText)
     };
 
     const addCustomerHandler = async () => {
@@ -47,15 +52,15 @@ const Customer = () => {
                 Customer Name:
             </div>
             <input
-            ref={inputNameRef}
+                ref={inputNameRef}
                 className="input-name"
                 placeholder="Full Name"
             ></input>
             <div className="category">
                 Category:
             </div>
-            <select>
-                <option ref={inputCateIdRef} onChange={(e) => onhandleSelect(e.target.value)} value="">
+            <select ref={inputCateIdRef} onChange={(e) => onhandleSelect(e.target.value)} value={categoryListId}>
+                <option>
                     Select Category
                 </option>
                 {selectedOptions.map((s) => (
@@ -68,8 +73,8 @@ const Customer = () => {
                 <div className="urgency">
                     Urgency:
                 </div>
-                <select>
-                    <option ref={inputUrgIdRef} value={"urgency_Id"}>
+                <select onChange={(e) => onhandleSelectTwo(e.target.value)} ref={inputUrgIdRef} value={urgencyListId}>
+                    <option>
                         Select Category
                     </option>
                     {urgentOptions.map((s) => (
@@ -82,7 +87,7 @@ const Customer = () => {
             <div className="submit-button">
                 <button className="btn" onClick={() => addCustomerHandler()}>Submit</button>
             </div>
-            </div>
+        </div>
     );
 };
 
