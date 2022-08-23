@@ -1,5 +1,6 @@
 .customer {
     border: 20%;
+    font-size: 20px;
   }
   
   .customer-name {
@@ -38,15 +39,11 @@
   .urgency-select {
     color: black;
     text-align: center;
-  }
-  
-  .submit-button {
-    color: black;
-    margin-left: 400px;
-    margin-bottom: 500px;
+    margin-bottom: 10px;
   }
   
   .btn {
     background-color: black;
     color: white;
+    justify-content: right;
   }

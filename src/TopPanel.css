@@ -1,17 +1,21 @@
 .customer-button {
-    border-radius: 0px;
-    border: 0px;
-    justify-items: auto;
-  }
-  
-  .tech-button {
-    border-radius: 0px;
-    border: 0px;
-    justify-items: auto;
-  }
-  
-  .billing-button {
-    border-radius: 0px;
-    border: 0px;
-    justify-items: auto;
-  }
+  border-radius: 0px;
+  border: 0px;
+  padding-right: 200px;
+  font-size: 25px;
+}
+
+.tech-button {
+  border-radius: 0px;
+  border: 0px;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-size: 25px;
+}
+
+.billing-button {
+  border-radius: 0px;
+  border: 0px;
+  padding-left: 200px;
+  font-size: 25px;
+}

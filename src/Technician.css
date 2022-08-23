@@ -1,4 +1,18 @@
+.tech {
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 6px;
+}
+
+.issue {
+  font-size: 20px;
+  padding-top: 15px;
+}
+
 .accept-btn {
     background-color: black;
     color: white;
+    margin-top: 20px;
   }
+
+  
