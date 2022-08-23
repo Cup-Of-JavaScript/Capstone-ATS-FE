@@ -51,16 +51,18 @@ const Customer = () => {
             <div className="customer-name">
                 Customer Name:
             </div>
+            <div className="input">
             <input
                 ref={inputNameRef}
                 className="input-name"
                 placeholder="Full Name"
             ></input>
+            </div>
             <div className="category">
                 Category:
             </div>
             <select ref={inputCateIdRef} onChange={(e) => onhandleSelect(e.target.value)} value={categoryListId}>
-                <option >
+                <option>
                     Select Category
                 </option>
                 {selectedOptions.map((s) => (
@@ -74,7 +76,7 @@ const Customer = () => {
                     Urgency:
                 </div>
                 <select onChange={(e) => onhandleSelectTwo(e.target.value)} ref={inputUrgIdRef} value={urgencyListId}>
-                    <option >
+                    <option>
                         Select Category
                     </option>
                     {urgentOptions.map((s) => (
