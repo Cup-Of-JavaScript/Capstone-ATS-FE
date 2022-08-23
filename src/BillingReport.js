@@ -13,10 +13,11 @@ export const BillingReport = () => {
     fetch()
   }, [])
 
+
   return (
     <div>
       <table>
-        <tbody className='BillingReport'>
+        <tbody className="BillingReport">
           <tr><th>Customer Name</th>
             <th>Technician</th>
             <th>Issue</th>

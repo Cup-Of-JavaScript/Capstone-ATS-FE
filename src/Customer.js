@@ -11,6 +11,7 @@ const Customer = () => {
     const [urgentOptions, setUrgentOptions] = useState([]);
     const [categoryListId, setCategoryListId] = useState('')
     const [urgencyListId, setUrgencyListId] = useState('')
+    const [buttonText, setButtonText] = useState("Submit");
 
     useEffect(() => {
         const fetch = async () => {
@@ -36,7 +37,7 @@ const Customer = () => {
         setUrgencyListId(inputText)
     };
 
-    const addCustomerHandler = async () => {
+    const addCustomerHandler = async (button) => {
         let customers = {
             "customer_name": inputNameRef.current.value,
             "category_id": parseInt(inputCateIdRef.current.value),
@@ -44,6 +45,11 @@ const Customer = () => {
         }
         let r = await axios.post(`http://localhost:5150/Customer`, customers)
         console.log(r)
+        if (button === buttonText) {
+            setButtonText("Done");
+        } else {
+            setButtonText("Submit");
+        }
     }
 
     return (
@@ -87,7 +93,7 @@ const Customer = () => {
                 </select>
             </div>
             <div>
-                <button className="btn" onClick={() => addCustomerHandler()}>Submit</button>
+                <button className="btn" onClick={() => addCustomerHandler('Submit')}>{buttonText}</button>
             </div>
         </div>
     );
