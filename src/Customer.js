@@ -2,6 +2,7 @@ import { React, useEffect, useState, useRef } from "react";
 import axios from "axios";
 import "./Customer.css";
 
+
 const Customer = () => {
     let inputNameRef = useRef(null);
     let inputCateIdRef = useRef(null);
