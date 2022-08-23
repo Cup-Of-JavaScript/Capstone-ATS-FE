@@ -51,11 +51,13 @@ const Customer = () => {
             <div className="customer-name">
                 Customer Name:
             </div>
+            <div className="input">
             <input
                 ref={inputNameRef}
                 className="input-name"
                 placeholder="Full Name"
             ></input>
+            </div>
             <div className="category">
                 Category:
             </div>

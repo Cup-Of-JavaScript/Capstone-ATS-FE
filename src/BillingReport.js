@@ -1,4 +1,4 @@
-import {React, useState, useEffect } from 'react'
+import { React, useState, useEffect } from 'react'
 import './BillingReport.css'
 import axios from 'axios'
 
@@ -14,7 +14,6 @@ export const BillingReport = () => {
   }, [])
 
   return (
-
     <div>
       <table>
         <tbody className='BillingReport'>
@@ -24,8 +23,8 @@ export const BillingReport = () => {
             <th>Urgency</th>
             <th>Cost</th>
           </tr>
-          {billing.map(b => (
-            <tr key={b.customer_name}>
+          {billing.map((b) => (
+            <tr key={b.customer_id}>
               <td>{b.customer_name} </td>
               <td>{b.tech_name} </td>
               <td>{b.category_name} </td>
