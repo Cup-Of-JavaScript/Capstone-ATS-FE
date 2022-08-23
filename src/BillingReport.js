@@ -13,10 +13,11 @@ export const BillingReport = () => {
     fetch()
   }, [])
 
+
   return (
     <div>
       <table>
-        <tbody className='BillingReport'>
+        <tbody className="BillingReport">
           <tr><th>Customer Name</th>
             <th>Technician</th>
             <th>Issue</th>
@@ -24,7 +25,7 @@ export const BillingReport = () => {
             <th>Cost</th>
           </tr>
           {billing.map((b) => (
-            <tr key={b.customer_id}>
+            <tr key={b.customer_name}>
               <td>{b.customer_name} </td>
               <td>{b.tech_name} </td>
               <td>{b.category_name} </td>

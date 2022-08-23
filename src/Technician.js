@@ -60,7 +60,7 @@ const Technician = () => {
                         ))}
                     </select>
                 </div >
-                <div className>
+                <div>
                     <button className="accept-btn" type="submit">Accept</button>
                 </div>
             </form>
