@@ -2,6 +2,7 @@ import { React, useState, useEffect, useRef } from "react";
 import axios from 'axios'
 import './Technician.css'
 
+
 const Technician = () => {
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [otherSelectedOptions, setOtherSelectedOptions] = useState([])
