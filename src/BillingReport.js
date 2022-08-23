@@ -13,11 +13,6 @@ export const BillingReport = () => {
     fetch()
   }, [])
 
-  // const onHandleBilling = (info) => {
-  //   setBilling(info)
-  //   onChange={(e) => onHandleBilling(e.target.value)}
-  // }
-
   return (
     <div>
       <table>
