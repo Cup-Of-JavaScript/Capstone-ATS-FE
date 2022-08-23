@@ -86,7 +86,7 @@ const Customer = () => {
                     ))}
                 </select>
             </div>
-            <div className="submit-button">
+            <div className>
                 <button className="btn" onClick={() => addCustomerHandler()}>Submit</button>
             </div>
         </div>
