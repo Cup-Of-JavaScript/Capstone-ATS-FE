@@ -14,7 +14,7 @@ const Customer = () => {
 
     useEffect(() => {
         const fetch = async () => {
-            let r = await axios.get(`http://localhost:5150/category`)
+            let r = await axios.get(`http://localhost:5150/Category`)
             setSelectedOptions(r.data)
         }
         fetch()

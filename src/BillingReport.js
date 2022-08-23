@@ -3,7 +3,6 @@ import './BillingReport.css'
 import axios from 'axios'
 
 export const BillingReport = () => {
-
   let [billing, setBilling] = useState([])
 
   useEffect(() => {
