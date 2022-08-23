@@ -14,7 +14,7 @@ const Customer = () => {
 
     useEffect(() => {
         const fetch = async () => {
-            let r = await axios.get(`http://localhost:5150/category`)
+            let r = await axios.get(`http://localhost:5150/Category`)
             setSelectedOptions(r.data)
         }
         fetch()
@@ -60,6 +60,7 @@ const Customer = () => {
                 Category:
             </div>
             <select ref={inputCateIdRef} onChange={(e) => onhandleSelect(e.target.value)} value={categoryListId}>
+                <option >
                 <option>
                     Select Category
                 </option>
@@ -74,6 +75,7 @@ const Customer = () => {
                     Urgency:
                 </div>
                 <select onChange={(e) => onhandleSelectTwo(e.target.value)} ref={inputUrgIdRef} value={urgencyListId}>
+                    <option >
                     <option>
                         Select Category
                     </option>
