@@ -66,4 +66,4 @@ const Technician = () => {
         </div>
     )
 }
-export default Technician;
+export default Technician
