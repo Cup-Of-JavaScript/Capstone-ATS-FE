@@ -1,6 +1,7 @@
-import { React, useState, useEffect, useRef} from "react";
+import { React, useState, useEffect, useRef } from "react";
 import axios from 'axios'
 import './Technician.css'
+
 
 const Technician = () => {
     const [selectedOptions, setSelectedOptions] = useState([]);
@@ -30,8 +31,8 @@ const Technician = () => {
         let tech = {
             tech_name: inputNameRef.current.value,
             category_id: parseInt(inputIdRef.current.value)
-          };
-          let result = await axios.put(`http://localhost:5150/Technician`, tech)
+        };
+        let result = await axios.put(`http://localhost:5150/Technician`, tech)
         console.log(result.data)
     };
 
@@ -39,31 +40,31 @@ const Technician = () => {
     return (
         <div className="Technician">
             <form onSubmitCapture={onhandleSelect}>
-            <div>Technician Name:</div>
-            <select>
-                <option ref={inputIdRef} value="">Select Name</option>
-                {selectedOptions.map((s) => (
-                    <option key={s.tech_id} value={s.tech_id}>
-                        {s.tech_name}
-                    </option>
-                ))}
-            </select>
-            <div>
-                <div>Issue</div>
+                <div className="tech">Technician Name:</div>
                 <select>
-                    <option ref={inputNameRef} value="">Select Issue</option>
-                    {otherSelectedOptions.map((s) => (
-                        <option key={s.category_id} value={s.category_id}>
-                            {s.category_name}
+                    <option ref={inputIdRef} value="">Select Name</option>
+                    {selectedOptions.map((s) => (
+                        <option key={s.tech_id} value={s.tech_id}>
+                            {s.tech_name}
                         </option>
                     ))}
                 </select>
-            </div >
-            <div className="accept-container">
-                <button className="accept-btn" type="submit">Accept</button>
-            </div>
+                <div>
+                    <div className="issue">Issue</div>
+                    <select>
+                        <option ref={inputNameRef} value="">Select Issue</option>
+                        {otherSelectedOptions.map((s) => (
+                            <option key={s.category_id} value={s.category_id}>
+                                {s.category_name}
+                            </option>
+                        ))}
+                    </select>
+                </div >
+                <div className>
+                    <button className="accept-btn" type="submit">Accept</button>
+                </div>
             </form>
         </div>
     )
 }
-export default Technician;
+export default Technician
