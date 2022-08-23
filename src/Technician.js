@@ -6,6 +6,7 @@ import './Technician.css'
 const Technician = () => {
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [otherSelectedOptions, setOtherSelectedOptions] = useState([])
+    const [buttonText, setButtonText] = useState("Accept");
 
     let inputIdRef = useRef(null)
     let inputNameRef = useRef(null)
@@ -36,6 +37,14 @@ const Technician = () => {
         console.log(result.data)
     };
 
+    const onHandleAccept = async (button) => {
+        if (button === buttonText) {
+            setButtonText("Done");
+        } else {
+            setButtonText("Accept");
+        }
+    }
+
 
     return (
         <div className="Technician">
@@ -61,7 +70,7 @@ const Technician = () => {
                     </select>
                 </div >
                 <div>
-                    <button className="accept-btn" type="submit">Accept</button>
+                    <button className="accept-btn" type="submit" onClick={() => onHandleAccept('Accept')}>{buttonText}</button>
                 </div>
             </form>
         </div>
