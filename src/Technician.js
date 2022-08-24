@@ -59,12 +59,12 @@ const Technician = () => {
                     ))}
                 </select>
                 <div>
-                    <div className="issue">Issue</div>
+                    <div className="issue">Customer Issue:</div>
                     <select>
-                        <option ref={inputNameRef} value="">Select Issue</option>
+                        <option ref={inputNameRef} value="">Select Customer Issue</option>
                         {otherSelectedOptions.map((s) => (
-                            <option key={s.category_id} value={s.category_id}>
-                                {s.category_name}
+                            <option key={s.customer_id} value={s.customer_id}>
+                                {s.customer_name} - {s.category_name}
                             </option>
                         ))}
                     </select>
