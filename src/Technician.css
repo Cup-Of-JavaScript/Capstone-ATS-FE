@@ -10,9 +10,27 @@
 }
 
 .accept-btn {
-    background-color: black;
-    color: white;
-    margin-top: 20px;
+  justify-content: right;
+  display: inline-block;
+padding: 5px 15px;
+font-size: 20px;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+outline: none;
+color: #fff;
+background-color: #55c2da;
+border: none;
+border-radius: 15px;
+box-shadow: 0 9px #999;
+}
+
+.accept-btn:hover {background-color: #4681f4}
+
+.accept-btn:active {
+background-color: #0a0799;
+box-shadow: 0 5px #000;
+transform: translateY(4px);
   }
 
   

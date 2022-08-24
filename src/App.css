@@ -1,18 +1,13 @@
 * {
   justify-content: space-between;
   text-align: center;
-  background: grey;
+  background-color: lightgray;
 }
 
 h1 {
   margin-bottom: 20px;
-  background: #E59560;
 }
 
-.main {
-  background-color: #E59560
-}
-
-.header {
-  background-color: #E59560;
+router {
+  cursor: pointer;
 }
