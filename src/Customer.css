@@ -1,50 +1,50 @@
 .customer {
-    border: 20%;
-    font-size: 20px;
-  }
-  
-  .customer-name {
-    margin: 0px;
-    padding: 0px;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .input-name {
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
-    background-color: white;
-  }
-  
-  option {
-    background-color: white;
-    color: black;
-  }
-  
-  .category {
-    margin-top: 20px;  
-  }
-  
-  select {
-    background-color: white;
-    color: black;
-    text-align: center;
-  }
-  
-  .urgency{
-    margin-top: 20px;
-  }
-  
-  .urgency-select {
-    color: black;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .btn {
-    justify-content: right;
-    display: inline-block;
+  border: 20%;
+  font-size: 20px;
+}
+
+.customer-name {
+  margin: 0px;
+  padding: 0px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.input-name {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  background-color: white;
+}
+
+option {
+  background-color: white;
+  color: black;
+}
+
+.category {
+  margin-top: 20px;
+}
+
+select {
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+
+.urgency {
+  margin-top: 20px;
+}
+
+.urgency-select {
+  color: black;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn {
+  justify-content: right;
+  display: inline-block;
   padding: 5px 15px;
   font-size: 20px;
   cursor: pointer;
@@ -58,10 +58,21 @@
   box-shadow: 0 9px #999;
 }
 
-.btn:hover {background-color: #4681f4}
+.btn:hover {
+  background-color: #4681f4
+}
 
 .btn:active {
   background-color: #0a0799;
   box-shadow: 0 5px #000;
   transform: translateY(4px);
+}
+
+select {
+  background-color: lightgrey;
+}
+
+input {
+  background-color: lightgrey;
+  color: #000;
 }

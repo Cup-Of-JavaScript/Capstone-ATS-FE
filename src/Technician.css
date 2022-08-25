@@ -1,36 +1,51 @@
+* {
+  justify-content: space-around;
+}
+
 .tech {
   font-size: 20px;
   padding-top: 20px;
   padding-bottom: 6px;
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+  height: '100vh';
 }
 
-.issue {
+.tech1 {
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.issues {
   font-size: 20px;
-  padding-top: 15px;
+  padding-top: 10px;
+  margin-bottom: 20px;
 }
 
 .accept-btn {
   justify-content: right;
   display: inline-block;
-padding: 5px 15px;
-font-size: 20px;
-cursor: pointer;
-text-align: center;
-text-decoration: none;
-outline: none;
-color: #fff;
-background-color: #55c2da;
-border: none;
-border-radius: 15px;
-box-shadow: 0 9px #999;
+  padding: 5px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #55c2da;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin-top: 10px;
 }
 
-.accept-btn:hover {background-color: #4681f4}
+.accept-btn:hover {
+  background-color: #4681f4
+}
 
 .accept-btn:active {
-background-color: #0a0799;
-box-shadow: 0 5px #000;
-transform: translateY(4px);
-  }
-
-  
+  background-color: #0a0799;
+  box-shadow: 0 5px #000;
+  transform: translateY(4px);
+}

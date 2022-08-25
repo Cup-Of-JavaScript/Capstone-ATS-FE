@@ -2,7 +2,6 @@ import { React, useState, useEffect, useRef } from "react";
 import axios from 'axios'
 import './Technician.css'
 
-
 const Technician = () => {
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [otherSelectedOptions, setOtherSelectedOptions] = useState([])
@@ -45,20 +44,21 @@ const Technician = () => {
         }
     }
 
-
     return (
         <div className="Technician">
             <form onSubmitCapture={onhandleSelect}>
-                <div className="tech">Technician Name:</div>
-                <select>
-                    <option ref={inputIdRef} value="">Select Name</option>
-                    {selectedOptions.map((s) => (
-                        <option key={s.tech_id} value={s.tech_id}>
-                            {s.tech_name}
-                        </option>
-                    ))}
-                </select>
-                <div>
+                <div className="tech1">
+                    <div className="tech">Technician Name:</div>
+                    <select>
+                        <option ref={inputIdRef} value="">Select Name</option>
+                        {selectedOptions.map((s) => (
+                            <option key={s.tech_id} value={s.tech_id}>
+                                {s.tech_name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div className="issues">
                     <div className="issue">Customer Issue:</div>
                     <select>
                         <option ref={inputNameRef} value="">Select Customer Issue</option>

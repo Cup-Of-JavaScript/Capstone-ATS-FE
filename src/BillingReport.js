@@ -13,10 +13,9 @@ export const BillingReport = () => {
     fetch()
   }, [])
 
-
   return (
-    <div>
-      <table>
+    <div className='div'>
+      <table className='table'>
         <tbody className="BillingReport">
           <tr><th>Customer Name</th>
             <th>Technician</th>
