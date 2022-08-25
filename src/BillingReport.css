@@ -2,13 +2,15 @@ table,
 th,
 td {
     margin: auto;
-    font-size: 20px;
-    padding: 25px;
+    font-size: 15px;
+    padding: 15px;
     text-align: center;
     border: 2px solid;
     background: cornsilk;
     color: black;
 }
+
+td:hover {background-color: #55c2da;}
 
 .table {
     margin-bottom: 20px;

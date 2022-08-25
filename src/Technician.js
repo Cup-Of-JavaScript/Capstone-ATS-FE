@@ -56,10 +56,11 @@ const Technician = () => {
     };
 
     return (
-        <div className="Technician">
+        <div className="tech1">
             <form onSubmitCapture={onhandleSelect}>
                 <div className="tech">Technician Name:</div>
                 <select
+                type="input"
                 ref={inputNameRef}
                 onChange={(e) => onhandleTech(e.target.value)}
                 value={techListId}
@@ -73,7 +74,8 @@ const Technician = () => {
                 </select>
                 <div>
                     <div className="issue">Customer Issue:</div>
-                    <select 
+                    <select
+                    type="input" 
                     onChange={(e) => onhandleIssues(e.target.value)} 
                     ref={inputIdRef} 
                     value={issueListId}>
@@ -88,7 +90,7 @@ const Technician = () => {
                     </select>
                 </div>
                 <div>
-                    <button className="accept-btn" type="submit" onClick={() => onHandleAccept('Accept')}>{buttonText}</button>
+                    <button className="accept-btn" disabled={"input" === ''} type="submit" onClick={() => onHandleAccept('Accept')}>{buttonText}</button>
                 </div>
             </form>
         </div>

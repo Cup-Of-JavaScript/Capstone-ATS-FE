@@ -6,6 +6,7 @@ const Customer = () => {
     let inputNameRef = useRef(null);
     let inputCateIdRef = useRef(null);
     let inputUrgIdRef = useRef(null);
+    // let nameError = "";
 
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [urgentOptions, setUrgentOptions] = useState([]);
@@ -25,9 +26,10 @@ const Customer = () => {
         const fetch = async () => {
             let r = await axios.get(`http://localhost:5150/Urgency`)
             setUrgentOptions(r.data)
-        }
-        fetch()
+          };
+          fetch()
     }, [])
+
 
     const onhandleSelect = async (inputText) => {
         setCategoryListId(inputText)
@@ -60,6 +62,7 @@ const Customer = () => {
             </div>
             <div className="input">
                 <input
+                type='input'
                     ref={inputNameRef}
                     className="input-name"
                     placeholder="Full Name"
@@ -68,7 +71,9 @@ const Customer = () => {
             <div className="category">
                 Category:
             </div>
-            <select ref={inputCateIdRef} 
+            <select 
+            type='input'
+            ref={inputCateIdRef} 
             onChange={(e) => onhandleSelect(e.target.value)} 
             value={categoryListId}>
                 <option>
@@ -84,7 +89,11 @@ const Customer = () => {
                 <div className="urgency">
                     Urgency:
                 </div>
-                <select onChange={(e) => onhandleSelectTwo(e.target.value)} ref={inputUrgIdRef} value={urgencyListId}>
+                <select 
+                type='input'
+                onChange={(e) => onhandleSelectTwo(e.target.value)} 
+                ref={inputUrgIdRef} 
+                value={urgencyListId}>
                     <option>
                         Select Category
                     </option>
@@ -96,7 +105,7 @@ const Customer = () => {
                 </select>
             </div>
             <div>
-                <button className="btn" type="submit" onClick={() => addCustomerHandler('Submit')}>{buttonText}</button>
+                <button className="btn" disabled={"input" === ''} type="submit" onClick={() => addCustomerHandler('Submit')}>{buttonText}</button>
             </div>
         </div>
     );
