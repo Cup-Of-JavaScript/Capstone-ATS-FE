@@ -48,10 +48,9 @@ const Customer = () => {
         }
         let r = await axios.post(`http://localhost:5150/Customer`, customers)
         console.log(r)
-        if (button === buttonText && selectedOptions === true) {
+        if (button === buttonText) {
             setButtonText("Done");
-        } if (button === !buttonText && urgentOptions === false) {
-            setUrgentOptions("Error")
+        } else {
             setButtonText("Submit");
         }
     }
