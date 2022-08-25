@@ -68,7 +68,9 @@ const Customer = () => {
             <div className="category">
                 Category:
             </div>
-            <select ref={inputCateIdRef} onChange={(e) => onhandleSelect(e.target.value)} value={categoryListId}>
+            <select ref={inputCateIdRef} 
+            onChange={(e) => onhandleSelect(e.target.value)} 
+            value={categoryListId}>
                 <option>
                     Select Category
                 </option>
