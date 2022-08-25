@@ -6,17 +6,20 @@
   display: 'flex';
   justify-content: 'center';
   align-items: 'center';
-  height: '100vh';
 }
 
-h1 {
+header {
   margin-bottom: 20px;
-  background-color: black;
-  color: beige;
   display: 'flex';
   justify-content: 'center';
   align-items: 'center';
   height: '100vh';
+    width:100%;
+    top: 0%;
+    bottom: 100%;
+    padding: 25px;
+    background:#333;
+    color:#fff;
 }
 
 router {
@@ -33,4 +36,14 @@ div {
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+footer{
+  padding: 25px;
+  background:#333;
+  color:#fff;
+  position:absolute;
+    width:100%;
+    top: 100%;
+    bottom: 0;
 }

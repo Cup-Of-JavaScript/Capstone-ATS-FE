@@ -1,21 +1,36 @@
+* {
+  margin: 0;
+}
+
 .customer-button {
-  border-radius: 0px;
-  border: 0px;
-  padding-right: 200px;
   font-size: 20px;
+  padding: 10px 60px;
+  cursor: pointer;
+  opacity: 0.6;
+  background: white;
+  border: 0;
+  outline: 0;
+  color: black;
 }
 
 .tech-button {
-  border-radius: 0px;
-  border: 0px;
-  padding-left: 100px;
-  padding-right: 100px;
   font-size: 20px;
+  padding: 10px 60px;
+  cursor: pointer;
+  opacity: 0.6;
+  background: white;
+  border: 0;
+  outline: 0;
+  color: black;
 }
 
 .billing-button {
-  border-radius: 0px;
-  border: 0px;
-  padding-left: 200px;
   font-size: 20px;
+  padding: 10px 60px;
+  cursor: pointer;
+  opacity: 0.6;
+  background: white;
+  border: 0;
+  outline: 0;
+  color: black;
 }

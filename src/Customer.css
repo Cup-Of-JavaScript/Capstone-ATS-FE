@@ -1,6 +1,15 @@
 .customer {
-  border: 20%;
-  font-size: 20px;
+  margin-top: 6%;
+  margin-left: 40%;
+  width: min-content;
+  font-size: 15px;
+  padding: 10px 60px;
+  cursor: pointer;
+  opacity: 0.9;
+  background-color: white;
+  border: 0;
+  outline: 0;
+  color: black;
 }
 
 .customer-name {
@@ -55,7 +64,6 @@ select {
   background-color: #55c2da;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
 }
 
 .btn:hover {

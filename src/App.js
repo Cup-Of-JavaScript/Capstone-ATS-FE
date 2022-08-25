@@ -8,8 +8,7 @@ import './App.css';
 function App() {
   return (
       <div className='container'>
-        
-        <h1>Apartment Ticketing System</h1>
+        <header><h1>Apartment Ticketing System</h1></header>
         <div className='main'>
           <BrowserRouter>
             <Routes>
@@ -21,6 +20,9 @@ function App() {
             </Routes>
           </BrowserRouter>
         </div>
+        <footer>
+          <p>&copy; Cup of Javascript 2022</p>
+        </footer>
       </div >
   )
 }
