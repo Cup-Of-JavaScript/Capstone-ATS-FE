@@ -37,6 +37,7 @@ const Customer = () => {
         setUrgencyListId(inputText)
     };
 
+
     const addCustomerHandler = async (button) => {
         let customers = {
             "customer_name": inputNameRef.current.value,
@@ -50,15 +51,6 @@ const Customer = () => {
         } else {
             setButtonText("Submit");
         }
-        document.onkeyup = (e) => {
-            if (e.target.tagName === 'INPUT') {
-              const canSubmit = [...document.forms.theForm.querySelectorAll('input[type="text"]')]
-                .every(i => {
-                  return i.value
-                })
-              document.forms.theForm.querySelector('input[type="submit"]').disabled = !canSubmit
-            }
-          }
     }
 
     return (
@@ -67,11 +59,11 @@ const Customer = () => {
                 Customer Name:
             </div>
             <div className="input">
-            <input
-                ref={inputNameRef}
-                className="input-name"
-                placeholder="Full Name"
-            ></input>
+                <input
+                    ref={inputNameRef}
+                    className="input-name"
+                    placeholder="Full Name"
+                ></input>
             </div>
             <div className="category">
                 Category:
@@ -104,7 +96,7 @@ const Customer = () => {
                 </select>
             </div>
             <div>
-                <button className="btn" reactstyle="vertical-align:middle" type="submit" onClick={() => addCustomerHandler('Submit')}>{buttonText}</button>
+                <button className="btn" type="submit" onClick={() => addCustomerHandler('Submit')}>{buttonText}</button>
             </div>
         </div>
     );

@@ -1,13 +1,36 @@
 * {
   justify-content: space-between;
   text-align: center;
-  background-color: lightgray;
+  background-color: rgba(0,0,0,0);
+  color: white;
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+  height: '100vh';
 }
 
 h1 {
   margin-bottom: 20px;
+  background-color: black;
+  color: beige;
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+  height: '100vh';
 }
 
 router {
   cursor: pointer;
+}
+
+div {
+  font-family: 'Exo', sans-serif;
+}
+
+.background-image{
+  background-image: url('ATS.jpg');
+  width: 200px;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

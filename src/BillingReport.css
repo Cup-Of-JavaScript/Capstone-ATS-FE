@@ -1,9 +1,16 @@
-table, th, td {
-    width: px;
+table,
+th,
+td {
     margin: auto;
     font-size: 20px;
-    padding: 10px;
+    padding: 25px;
     text-align: center;
     border: 2px solid;
-    background: #BACEC1;
+    background: cornsilk;
+    color: black;
+}
+
+.table {
+    margin-bottom: 20px;
+    margin-top: 30px;
 }
